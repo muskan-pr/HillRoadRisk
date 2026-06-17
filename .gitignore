@@ -1,0 +1,70 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+
+# Node.js
+node_modules/
+frontend/dist/
+frontend/build/
+.next/
+
+# Environment
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Data (large files - do not commit)
+data/dem/
+data/landslides/raw/
+data/models/
+data/processed/
+data/satellite/
+*.tif
+*.tiff
+*.hdf
+*.nc
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.sbn
+*.sbx
+
+# ML
+mlruns/
+mlflow.db
+
+# Docker
+docker-compose.override.yml
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/

@@ -1,0 +1,18 @@
+{
+  "name": "HillRoadRisk",
+  "short_name": "HillRisk",
+  "description": "Hyperlocal Landslide Risk Maps for Uttarakhand",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0e1a",
+  "theme_color": "#0a0e1a",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["weather", "navigation", "utilities"]
+}

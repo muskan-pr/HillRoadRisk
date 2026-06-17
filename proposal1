@@ -1,0 +1,776 @@
+Project: Hyperlocal Landslide Risk Maps for Indian Hilly Terrain
+
+Vision
+
+Build a geospatial intelligence platform that predicts and visualizes landslide risk at road-segment and village level across Indian hilly regions.
+
+The platform aims to bridge the gap between existing weather forecasts and actionable information for citizens, transport operators, tourism companies, and disaster management authorities.
+
+Rather than answering:
+
+“Will there be heavy rainfall in Uttarakhand?”
+
+The platform answers:
+
+“This specific road segment between Joshimath and Badrinath has elevated landslide risk during the next six hours.”
+
+⸻
+
+Problem Statement
+
+India experiences recurring landslides in:
+
+* Uttarakhand
+* Himachal Pradesh
+* Sikkim
+* Arunachal Pradesh
+* Darjeeling
+* Western Ghats
+
+Existing systems have several limitations:
+
+1. District-level alerts are too coarse.
+2. Citizens do not know which roads are dangerous.
+3. Bus operators lack predictive routing.
+4. Tourists are unaware of localized hazards.
+5. Authorities must manually combine information from multiple agencies.
+
+The missing layer is hyperlocal, continuously updated decision support.
+
+⸻
+
+Product Goals
+
+Primary Goal
+
+Provide road-segment-level landslide risk scores updated every hour.
+
+Secondary Goals
+
+* Identify villages under elevated risk.
+* Assist transport operators.
+* Enable safer travel decisions.
+* Support disaster management agencies.
+* Create APIs that can integrate with navigation platforms.
+
+⸻
+
+Target Users
+
+Citizens
+
+Need:
+
+* Safe travel decisions
+* Route warnings
+* Risk awareness
+
+⸻
+
+Bus Operators
+
+Need:
+
+* Route planning
+* Delay prevention
+* Alternate routes
+
+Examples:
+
+* HRTC
+* KSRTC
+* State transport corporations
+
+⸻
+
+Tourism Operators
+
+Need:
+
+* Safe itineraries
+* Travel advisories
+
+⸻
+
+Disaster Management Authorities
+
+Need:
+
+* Resource prioritization
+* Monitoring dashboards
+
+⸻
+
+Insurance Companies
+
+Need:
+
+* Risk assessment
+* Claim prediction
+
+⸻
+
+Product Scope
+
+The system will provide:
+
+Dynamic risk map
+
+Color-coded overlay:
+
+* Green
+* Yellow
+* Orange
+* Red
+
+⸻
+
+Road segment scores
+
+Example:
+
+NH-707
+
+KM 45–47
+
+Risk: High
+
+Probability: 82%
+
+Time window: Next 6 hours
+
+⸻
+
+Village risk scores
+
+Example:
+
+Village: Joshimath
+
+Current status:
+
+Orange
+
+⸻
+
+Historical heat maps
+
+Visualize:
+
+* Previous landslides
+* Seasonal patterns
+
+⸻
+
+Alert engine
+
+Notifications:
+
+* Elevated risk
+* Severe rainfall
+* Route hazards
+
+⸻
+
+Public APIs
+
+Endpoints for:
+
+* Segment risk
+* Village risk
+* Forecasts
+
+⸻
+
+MVP Strategy
+
+The project will be built in three stages.
+
+⸻
+
+Phase 1: Static Susceptibility Map
+
+Purpose:
+
+Determine areas naturally prone to landslides.
+
+Update frequency:
+
+Monthly
+
+Inputs:
+
+Elevation
+
+Source:
+
+SRTM
+
+⸻
+
+Slope
+
+Derived from DEM
+
+⸻
+
+Aspect
+
+Terrain direction
+
+⸻
+
+Curvature
+
+Terrain morphology
+
+⸻
+
+Land cover
+
+Forests
+Vegetation
+Urban areas
+
+⸻
+
+Distance from rivers
+
+⸻
+
+Historical landslide inventory
+
+⸻
+
+Outputs
+
+Low
+
+Medium
+
+High
+
+Very High
+
+⸻
+
+Difficulty
+
+Low
+
+Timeline
+
+2–3 months
+
+⸻
+
+Phase 2: Dynamic Risk Engine
+
+Purpose
+
+Convert static susceptibility into real-time risk.
+
+Update frequency
+
+Hourly
+
+Formula
+
+Risk
+
+=
+
+Base Susceptibility
+
+Recent Rainfall
+
+Current Rainfall
+
+Forecast Rainfall
+
+⸻
+
+Outputs
+
+Safe
+
+Watch
+
+Warning
+
+Danger
+
+⸻
+
+Example
+
+Yesterday
+
+Road A
+
+Medium
+
+After 120 mm rainfall
+
+Danger
+
+⸻
+
+Difficulty
+
+Medium
+
+Timeline
+
+3–6 months
+
+⸻
+
+Phase 3: Segment-Level Prediction
+
+Purpose
+
+Predict landslide probability for individual road segments.
+
+Example
+
+NH-707
+
+KM 45–47
+
+Probability
+
+83%
+
+Forecast window
+
+6 hours
+
+⸻
+
+Difficulty
+
+High
+
+Timeline
+
+6–12 months
+
+⸻
+
+Data Sources
+
+Weather
+
+IMD
+
+Inputs
+
+* Hourly rainfall
+* Forecast rainfall
+* Radar information
+
+⸻
+
+Terrain
+
+SRTM
+
+Copernicus DEM
+
+Derived features
+
+* Elevation
+* Slope
+* Aspect
+* Curvature
+
+⸻
+
+Road Network
+
+OpenStreetMap
+
+Attributes
+
+* Road geometry
+* Highway class
+
+⸻
+
+Historical Landslides
+
+Sources
+
+* Geological Survey of India
+* NDMA reports
+* State governments
+* News archives
+
+⸻
+
+Satellite Data
+
+ISRO
+
+Sentinel-2
+
+Landsat
+
+Uses
+
+* Vegetation
+* Surface changes
+
+⸻
+
+Crowdsourced Reports
+
+Future phase
+
+Inputs
+
+* Photos
+* User reports
+* Road blockages
+
+⸻
+
+Machine Learning Approach
+
+Phase 1
+
+Random Forest
+
+XGBoost
+
+Output
+
+Susceptibility score
+
+⸻
+
+Phase 2
+
+Hybrid approach
+
+Risk score
+
+=
+
+Static susceptibility
+
+Rainfall threshold models
+
+Forecast rainfall
+
+⸻
+
+Phase 3
+
+Advanced models
+
+Gradient boosting
+
+Spatio-temporal ML
+
+Graph neural networks
+
+Potential future
+
+⸻
+
+Expected Accuracy
+
+Research literature suggests:
+
+AUC
+
+0.75–0.90
+
+Precision
+
+70–85%
+
+The system is intended as a risk-assessment tool rather than a deterministic prediction system.
+
+⸻
+
+System Architecture
+
+            IMD
+             |
+  ------------------------
+  |                      |
+
+Historical Data         DEM Data
+|                      |
+————————
+|
+Feature Generation
+|
+Risk Engine
+|
+Segment Risk Database
+|
+––––––––––
+|                  |
+APIs             Dashboard
+|                  |
+Mobile Apps          Web Portal
+
+⸻
+
+Backend Components
+
+Ingestion Service
+
+Responsibilities
+
+* Weather ingestion
+* Satellite ingestion
+* Historical datasets
+
+⸻
+
+Feature Pipeline
+
+Responsibilities
+
+Generate:
+
+* Elevation
+* Slope
+* Curvature
+* Rainfall aggregates
+* Terrain features
+
+⸻
+
+Risk Engine
+
+Produces
+
+* Segment scores
+* Village scores
+
+⸻
+
+Alert Engine
+
+Generates
+
+* Notifications
+* Threshold crossings
+
+⸻
+
+API Gateway
+
+Endpoints
+
+GET /segment-risk
+
+GET /village-risk
+
+GET /forecast
+
+GET /alerts
+
+⸻
+
+Frontend
+
+Mapbox-based interface.
+
+Features
+
+Layers
+
+Risk overlay
+
+Road network
+
+Villages
+
+Rainfall
+
+Historical events
+
+⸻
+
+Filters
+
+State
+
+District
+
+Risk level
+
+Road type
+
+⸻
+
+Time slider
+
+Past
+
+Present
+
+Forecast
+
+⸻
+
+Technology Stack
+
+Backend
+
+Python
+
+FastAPI
+
+PostGIS
+
+Redis
+
+Celery
+
+DuckDB
+
+⸻
+
+Geospatial
+
+GDAL
+
+Rasterio
+
+GeoPandas
+
+Shapely
+
+PyProj
+
+OSMNX
+
+⸻
+
+ML
+
+Scikit-learn
+
+XGBoost
+
+LightGBM
+
+⸻
+
+Frontend
+
+React
+
+Mapbox GL
+
+TypeScript
+
+⸻
+
+Infrastructure
+
+Docker
+
+Kubernetes
+
+AWS
+
+⸻
+
+Future Roadmap
+
+Crowdsourced Waze-like reporting
+
+Users submit:
+
+* Landslides
+* Fallen trees
+* Blocked roads
+
+⸻
+
+Route recommendation engine
+
+Suggest safer routes.
+
+⸻
+
+Bus operator dashboard
+
+Fleet-level planning.
+
+⸻
+
+Tourist safety app
+
+Travel alerts.
+
+⸻
+
+AI incident summarization
+
+Aggregate:
+
+* News
+* Social media
+* Reports
+
+⸻
+
+Integration with Google Maps
+
+Risk overlay APIs.
+
+⸻
+
+Major Challenges
+
+Incomplete historical data
+
+Many landslides are never recorded.
+
+⸻
+
+Regional variability
+
+Models trained in Sikkim may not generalize to Himachal.
+
+⸻
+
+Human activity
+
+Road cutting
+
+Drainage failures
+
+Construction
+
+⸻
+
+Cloudbursts
+
+Highly localized rainfall events.
+
+⸻
+
+Key Insight
+
+The hard problem is not AI.
+
+The hard problem is integrating fragmented geospatial and weather data into a continuously updated decision platform.
+
+This project is analogous to:
+
+* Waze for mountain hazards
+* Via Transportation for disaster intelligence
+* Felt for geospatial decision-making
+
+The opportunity lies in transforming existing data into actionable, hyperlocal risk information for Indian hilly terrain.
